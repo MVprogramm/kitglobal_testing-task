@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Product } from '@/types/Product';
+import { Buy } from '@/types/Buy';
 import { Total } from '@/types/Total';
 import { styled } from '@mui/system';
 import { selectProductsState } from "@/store/productsSlice";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Link from "next/link";
@@ -18,8 +18,8 @@ const Block = styled(Box)`
 `;
 
 export default function Nav() {
-  let currentProducts: any = useSelector(selectProductsState).productsList;
-  const ProductsTotal: Total = currentProducts.reduce((acc: Total, product: any) => {
+  let currentProducts: Buy[] = useSelector(selectProductsState).productsList;
+  const ProductsTotal: Total = currentProducts.reduce((acc: Total, product: Buy) => {
     acc.totalNumber = acc.totalNumber + product.amount;
     acc.totalAmount = acc.totalAmount + product.amount * product.price;
     
