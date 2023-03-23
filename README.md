@@ -31,7 +31,7 @@ Stack:
 - eslint,
 - prettier
 
-website: 
+website: https://kitglobal-test-michael-valiahmetov.netlify.app
 
 michael.valiahmetov@gmail.com
 
